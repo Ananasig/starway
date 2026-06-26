@@ -320,6 +320,20 @@
             </div>
         </div>
     </footer>
-
+    <!-- Обработка формы -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Останавливаем отправку на сервер
+                    
+                    // Перенаправляем на главную страницу
+                    window.location.href = 'index.html';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
