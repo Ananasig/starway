@@ -1,0 +1,2031 @@
+/* 1. Подключаем шрифты из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+
+/* 2. Сброс стандартных отступов и настройка базовых стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 3. Основные переменные (чтобы не писать цвета каждый раз) */
+:root {
+    --primary: #5513b0;        /* Твой основной фиолетовый */
+    --primary-light: #7b3fcf;   /* Светлее для ховеров */
+    --primary-dark: #3d0d7a;    /* Темнее для градиентов */
+    --primary-glow: rgba(85, 19, 176, 0.4); /* Свечение */
+    --text-white: #ffffff;
+    --text-gray: #c4b5d4;      /* Светло-фиолетово-серый для текста */
+    --bg-dark: #0a0618;        /* Очень темный фон */
+    --glass-bg: rgba(255, 255, 255, 0.05); /* Прозрачный для стекла */
+    --glass-border: rgba(255, 255, 255, 0.12);
+}
+
+/* 4. Общие стили для всего сайта */
+html {
+    scroll-behavior: smooth;   /* Плавный скролл */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* 5. Стили для звездного фона (будет на всех страницах) */
+body {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Добавляем фоновое изображение */
+    background-image: url('../images/stars-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Фон не двигается при скролле */
+    background-repeat: no-repeat;
+}
+
+
+
+/* 6. Стили для контейнера (центрирует контент) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 7. Стили для кнопок */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--primary);
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: translateY(-3px);
+}
+
+/* 8. Стеклянные карточки (glassmorphism) */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 30px rgba(85, 19, 176, 0.2);
+    transform: translateY(-5px);
+}
+
+/* 9. Заголовки */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-white);
+}
+
+h2 span {
+    color: var(--primary);
+}
+
+/* 10. Разделитель */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 60px 0;
+    color: var(--primary);
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+}
+
+/* ======================================== */
+/* СТИЛИ ТОЛЬКО ДЛЯ ГЛАВНОЙ СТРАНИЦЫ        */
+/* ======================================== */
+
+/* --- 1. ШАПКА --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 6, 24, 0.8);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(85, 19, 176, 0.3);
+    padding: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-white);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+.logo-icon {
+    color: var(--primary);
+    margin-right: 8px;
+    font-size: 28px;
+}
+
+.logo-text {
+    background: linear-gradient(135deg, var(--text-white) 50%, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Меню навигации */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--text-white);
+}
+
+/* Кнопка "Забронировать" в шапке */
+.btn-book {
+    padding: 10px 28px;
+    background: var(--primary);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary);
+}
+
+.btn-book:hover {
+    background: transparent;
+    color: var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow);
+}
+
+/* --- 2. ГЕРОЙ --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+/* --- 3. ПРЕИМУЩЕСТВА --- */
+.benefits {
+    padding: 80px 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.benefit-item {
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.benefit-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.benefit-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- 4. ЭТАПЫ --- */
+.steps {
+    padding: 80px 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.step-item {
+    text-align: center;
+}
+
+.step-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.6;
+    margin-bottom: 10px;
+}
+
+.step-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.step-item p {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* --- 5. ЦИТАТА --- */
+.quote {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.quote blockquote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text-white);
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.quote cite {
+    color: var(--text-gray);
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+/* --- 6. ПРЕВЬЮ КОМАНДЫ (на главной) --- */
+.team-preview {
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 15px;
+    border: 3px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member:hover .member-photo {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.member-role {
+    color: var(--primary-light);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.member-desc {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+/* --- 7. ZERO-БЛОК (Погода на Марсе) --- */
+.zero-block {
+    padding: 60px 0;
+}
+
+.zero-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(135deg, rgba(85, 19, 176, 0.15), rgba(10, 6, 24, 0.8));
+    border: 2px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.zero-icon {
+    font-size: 64px;
+    background: rgba(85, 19, 176, 0.2);
+    border-radius: 50%;
+    padding: 15px;
+    border: 1px solid var(--primary);
+}
+
+.zero-text h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.mars-weather {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-light);
+}
+
+.mars-desc {
+    color: var(--text-gray);
+    font-size: 14px;
+}
+
+.zero-badge {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 3px 12px;
+    border-radius: 20px;
+    background: rgba(85, 19, 176, 0.1);
+    letter-spacing: 1px;
+}
+
+/* --- 8. ПОДВАЛ (FOOTER) --- */
+footer {
+    background: rgba(10, 6, 24, 0.95);
+    border-top: 1px solid rgba(85, 19, 176, 0.3);
+    padding: 40px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-logo .logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    background: linear-gradient(135deg, var(--text-white) 50%, var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer-logo p {
+    color: var(--text-gray);
+    font-size: 14px;
+    margin-top: 5px;
+    -webkit-text-fill-color: var(--text-gray);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-light);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(85, 19, 176, 0.2);
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(85, 19, 176, 0.3);
+}
+
+.footer-social a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* ======================================== */
+/* АДАПТИВНОСТЬ (для планшетов и телефонов) */
+/* ======================================== */
+@media (max-width: 992px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+    
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn-book {
+        display: none; /* Скрываем на телефонах */
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote blockquote {
+        font-size: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .zero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .zero-badge {
+        position: relative;
+        top: 0;
+        right: 0;
+        align-self: center;
+    }
+}
+/* ======================================== */
+/* НОВЫЕ РАЗДЕЛИТЕЛИ И ПЛАШКИ               */
+/* ======================================== */
+
+/* 1. Разделитель между блоками (уже есть, но сделаем его заметнее) */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+    color: var(--primary);
+    font-size: 18px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary), transparent);
+    max-width: 200px;
+}
+
+.divider span {
+    background: var(--primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-white);
+    font-size: 16px;
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* 2. Плашка-подложка для блоков (фиолетовая полупрозрачная) */
+.section-plate {
+    padding: 60px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(85, 19, 176, 0.15),
+        rgba(10, 6, 24, 0.9)
+    );
+    border-top: 1px solid rgba(85, 19, 176, 0.2);
+    border-bottom: 1px solid rgba(85, 19, 176, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    margin: 20px 0;
+}
+
+/* 3. Стеклянные карточки для этапов (добавляем эффект) */
+.step-item.glass-card {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.step-item.glass-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.3);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.step-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    opacity: 0.8;
+    margin-bottom: 10px;
+    text-shadow: 0 0 30px var(--primary-glow);
+}
+
+/* 4. Улучшаем карточки преимуществ */
+.benefit-item.glass-card {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.3s ease;
+}
+
+.benefit-item.glass-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.25);
+}
+
+/* 5. Zero-блок делаем более заметным */
+.zero-block .zero-content {
+    background: linear-gradient(
+        135deg,
+        rgba(85, 19, 176, 0.25),
+        rgba(10, 6, 24, 0.95)
+    );
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 50px rgba(85, 19, 176, 0.15);
+    padding: 35px;
+}
+
+.zero-block .zero-content:hover {
+    box-shadow: 0 0 70px rgba(85, 19, 176, 0.3);
+    border-color: var(--primary-light);
+}
+
+/* 6. Адаптация для мобильных */
+@media (max-width: 768px) {
+    .divider {
+        margin: 20px 0;
+        gap: 15px;
+    }
+    
+    .divider span {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+    
+    .section-plate {
+        padding: 40px 0;
+        margin: 10px 0;
+    }
+}
+
+/* ======================================== */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "ПЛАНЕТЫ"            */
+/* ======================================== */
+
+/* --- 1. Заголовок страницы --- */
+.page-header {
+    padding-top: 120px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.page-header h1 span {
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- 2. Галерея планет --- */
+.planets-gallery {
+    padding: 30px 0 80px;
+}
+
+/* Ряд из двух карточек */
+.planets-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-bottom: 35px;
+}
+
+/* Карточка планеты */
+.planet-card {
+    overflow: hidden;
+    padding: 0;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.planet-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: 0 0 50px rgba(85, 19, 176, 0.3);
+}
+
+/* Контейнер для фото */
+.planet-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Добавляем мягкое свечение за планетой */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(85, 19, 176, 0.15) 0%,
+        transparent 70%
+    );
+}
+
+.planet-image img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+    /* Добавляем свечение для планеты */
+    filter: drop-shadow(0 0 30px rgba(85, 19, 176, 0.2));
+}
+
+.planet-card:hover .planet-image img {
+    transform: scale(1.1) rotate(-3deg);
+    filter: drop-shadow(0 0 50px rgba(85, 19, 176, 0.4));
+}
+
+/* Бейдж (Земная группа / Газовый гигант / Ледяной гигант) */
+.planet-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(85, 19, 176, 0.85);
+    color: var(--text-white);
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Информация о планете */
+.planet-info {
+    padding: 25px;
+}
+
+.planet-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    color: var(--text-white);
+    letter-spacing: 1px;
+}
+
+/* Характеристики (статистика) */
+.planet-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+.stat-icon {
+    font-size: 18px;
+    width: 30px;
+    text-align: center;
+}
+
+.stat-text {
+    font-weight: 400;
+}
+
+/* Кнопка "Забронировать" на карточке */
+.btn-book-planet {
+    display: inline-block;
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-book-planet:hover {
+    background: var(--primary);
+    color: var(--text-white);
+    box-shadow: 0 0 30px rgba(85, 19, 176, 0.4);
+    transform: scale(1.02);
+}
+
+/* --- 3. Нептун отдельно (по центру) --- */
+.neptune-special {
+    display: flex;
+    justify-content: center;
+}
+
+.neptune-card {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* --- 4. Адаптивность --- */
+@media (max-width: 992px) {
+    .planets-row {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    .page-header h1 {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .planets-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .page-header {
+        padding-top: 100px;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .planet-image {
+        height: 200px;
+    }
+    
+    .planet-info h3 {
+        font-size: 1.4rem;
+    }
+    
+    .neptune-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .planet-image {
+        height: 180px;
+    }
+    
+    .planet-badge {
+        font-size: 10px;
+        padding: 4px 12px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .stat {
+        font-size: 13px;
+    }
+    
+    .btn-book-planet {
+        font-size: 14px;
+        padding: 12px 0;
+    }
+}
+
+/* ======================================== */
+/* ДОПОЛНИТЕЛЬНЫЕ ЭФФЕКТЫ ДЛЯ PNG ПЛАНЕТ    */
+/* ======================================== */
+
+/* Светящийся ореол вокруг планеты */
+.planet-image::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle,
+        rgba(85, 19, 176, 0.2) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.6s ease;
+}
+
+.planet-card:hover .planet-image::after {
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(
+        circle,
+        rgba(85, 19, 176, 0.35) 0%,
+        transparent 70%
+    );
+}
+
+/* Анимация плавного покачивания для планет (живой эффект) */
+.planet-image img {
+    animation: float 4s ease-in-out infinite;
+}
+
+.planet-card:nth-child(2) .planet-image img {
+    animation-delay: 0.5s;
+}
+
+.planet-card:nth-child(3) .planet-image img {
+    animation-delay: 1s;
+}
+
+.planet-card:nth-child(4) .planet-image img {
+    animation-delay: 1.5s;
+}
+
+.planet-card:nth-child(5) .planet-image img {
+    animation-delay: 0.3s;
+}
+
+.planet-card:nth-child(6) .planet-image img {
+    animation-delay: 0.8s;
+}
+
+.neptune-card .planet-image img {
+    animation-delay: 1.2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-8px) scale(1.02);
+    }
+    100% {
+        transform: translateY(0px) scale(1);
+    }
+}
+
+/* Отключаем анимацию при наведении, чтобы не конфликтовала */
+.planet-card:hover .planet-image img {
+    animation-play-state: paused;
+}
+
+
+/* ======================================== */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "ТУРЫ"               */
+/* ======================================== */
+
+/* --- 1. Карточки туров --- */
+.tours-list {
+    padding: 30px 0 60px;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.tour-card {
+    padding: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.tour-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 0 50px rgba(85, 19, 176, 0.3);
+}
+
+.tour-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.tour-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    color: var(--text-white);
+}
+
+/* Детали тура */
+.tour-details {
+    margin-bottom: 18px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.tour-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-label {
+    color: var(--text-gray);
+    font-weight: 300;
+}
+
+.detail-value {
+    color: var(--text-white);
+    font-weight: 500;
+}
+
+.tour-price {
+    color: var(--primary-light);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.tour-description {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    min-height: 50px;
+}
+
+/* Кнопка "Выбрать тур" */
+.btn-select-tour {
+    display: inline-block;
+    padding: 12px 40px;
+    background: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-select-tour:hover {
+    background: var(--primary);
+    color: var(--text-white);
+    box-shadow: 0 0 30px rgba(85, 19, 176, 0.4);
+    transform: scale(1.05);
+}
+
+/* --- 2. Форма бронирования --- */
+.booking-form {
+    padding: 30px 0 60px;
+}
+
+.booking-form .form-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+/* Группа полей */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-gray);
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--text-white);
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-gray);
+    opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(85, 19, 176, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.form-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    cursor: pointer;
+}
+
+.form-group select option {
+    background: var(--bg-dark);
+    color: var(--text-white);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Кнопка отправки */
+.btn-submit {
+    width: 100%;
+    padding: 16px 0;
+    background: var(--primary);
+    color: var(--text-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-submit:hover {
+    background: var(--primary-light);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.4);
+    transform: translateY(-3px);
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* --- 3. Гарантии --- */
+.guarantees {
+    padding: 30px 0 80px;
+}
+
+.guarantees-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.guarantee-item {
+    text-align: center;
+    padding: 30px 25px;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.guarantee-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.2);
+}
+
+.guarantee-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.guarantee-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+.guarantee-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- 4. Адаптивность --- */
+@media (max-width: 992px) {
+    .tours-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    
+    .guarantees-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tours-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .guarantees-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .tour-card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .booking-form .form-subtitle {
+        font-size: 1rem;
+    }
+    
+    .btn-submit {
+        font-size: 16px;
+        padding: 14px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tour-icon {
+        font-size: 36px;
+    }
+    
+    .tour-detail {
+        font-size: 14px;
+    }
+    
+    .tour-price {
+        font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+}
+
+
+/* ======================================== */
+/* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ТУРОВ           */
+/* ======================================== */
+
+/* --- Ряд с Индивидуальным туром (по центру) --- */
+.tours-row-special {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.special-tour {
+    max-width: 600px;
+    width: 100%;
+    border-color: rgba(85, 19, 176, 0.4);
+    background: linear-gradient(
+        135deg,
+        rgba(85, 19, 176, 0.2),
+        var(--glass-bg)
+    );
+}
+
+.special-tour:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 60px rgba(85, 19, 176, 0.4);
+}
+
+/* --- Подсказка для поля "Планета" --- */
+.planet-hint {
+    color: var(--text-gray);
+    font-weight: 300;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.planet-select-group {
+    border-left: 3px solid var(--primary);
+    padding-left: 15px;
+    background: rgba(85, 19, 176, 0.05);
+    border-radius: 8px;
+    padding: 15px 15px 5px 15px;
+}
+
+/* --- Адаптивность для специального тура --- */
+@media (max-width: 768px) {
+    .special-tour {
+        max-width: 100%;
+    }
+    
+    .planet-select-group {
+        padding: 12px 12px 5px 12px;
+    }
+}
+
+
+/* ======================================== */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "О НАС"               */
+/* ======================================== */
+
+/* --- 1. История --- */
+.history {
+    padding: 30px 0 50px;
+}
+
+.history-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 50px;
+    line-height: 1.8;
+}
+
+.history-content p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin-bottom: 18px;
+}
+
+.history-content p:last-child {
+    margin-bottom: 0;
+}
+
+.history-content .highlight {
+    color: var(--primary-light);
+    font-weight: 700;
+}
+
+/* --- 2. Временная шкала --- */
+.timeline {
+    padding: 30px 0 60px;
+}
+
+.timeline-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Вертикальная линия слева */
+.timeline-grid::before {
+    content: '';
+    position: absolute;
+    left: 0px;  /* ← было 20px, исправили на 0 */
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary), var(--primary-light), transparent);
+    border-radius: 10px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding-left: 20px;  /* ← было 30px, уменьшили до 20px */
+    position: relative;
+}
+
+/* Точка на линии */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -10px;  /* ← было 10px, исправили на -10px */
+    top: 15px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 3px solid var(--bg-dark);
+    box-shadow: 0 0 20px rgba(85, 19, 176, 0.3);
+    z-index: 1;
+}
+
+.timeline-year {
+    min-width: 70px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary-light);
+    padding-top: 8px;
+}
+
+.timeline-content {
+    flex: 1;
+    padding: 20px 25px;
+}
+
+.timeline-content h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: var(--text-white);
+}
+
+.timeline-content p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* --- 3. Миссия --- */
+.mission {
+    padding: 60px 0;
+}
+
+.mission-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.mission blockquote {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+.mission blockquote span {
+    color: var(--primary-light);
+}
+
+.mission cite {
+    color: var(--text-gray);
+    font-style: normal;
+    font-size: 1.1rem;
+}
+
+/* --- 4. Команда (на странице О нас) --- */
+.team-about {
+    padding: 30px 0 60px;
+}
+
+.team-about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.team-member-about {
+    text-align: center;
+    padding: 30px 25px 25px;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.team-member-about:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.25);
+}
+
+.member-avatar {
+    font-size: 56px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.team-member-about h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    color: var(--text-white);
+}
+
+.team-member-about .member-role {
+    color: var(--primary-light);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.team-member-about .member-desc {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* --- 5. Цифры и факты --- */
+.stats {
+    padding: 30px 0 80px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 30px 20px;
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+}
+
+.stat-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    border-color: var(--primary);
+    box-shadow: 0 0 40px rgba(85, 19, 176, 0.25);
+}
+
+.stat-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--primary-light);
+    margin-bottom: 4px;
+    text-shadow: 0 0 30px rgba(85, 19, 176, 0.2);
+}
+
+.stat-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- 6. Адаптивность --- */
+@media (max-width: 992px) {
+    .team-about-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .history-content {
+        padding: 25px 20px;
+    }
+    
+    .history-content p {
+        font-size: 1rem;
+    }
+    
+    .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 0;
+        padding-top: 10px;
+    }
+    
+    .timeline-item::before {
+        left: 10px;
+        top: 8px;
+        width: 18px;
+        height: 18px;
+    }
+    
+    .timeline-grid::before {
+        left: 18px;
+    }
+    
+    .timeline-year {
+        padding-left: 40px;
+        font-size: 1.2rem;
+        min-width: auto;
+    }
+    
+    .timeline-content {
+        padding-left: 40px;
+    }
+    
+    .mission blockquote {
+        font-size: 1.4rem;
+    }
+    
+    .team-about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .mission blockquote {
+        font-size: 1.2rem;
+    }
+    
+    .mission-icon {
+        font-size: 48px;
+    }
+    
+    .member-avatar {
+        font-size: 42px;
+    }
+    
+    .stat-icon {
+        font-size: 32px;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+
+/* ======================================== */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ "КОНТАКТЫ"            */
+/* ======================================== */
+
+/* --- 1. Контактная информация + Карта --- */
+.contacts-info {
+    padding: 30px 0 60px;
+}
+
+.contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+/* Левая колонка с контактами */
+.contacts-details {
+    padding: 35px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contacts-details h2 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.contacts-details h2 span {
+    color: var(--primary);
+}
+
+/* Каждый контакт */
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    font-size: 28px;
+    min-width: 40px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.contact-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.contact-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-value {
+    font-size: 1.05rem;
+    color: var(--text-white);
+    line-height: 1.5;
+}
+
+/* Карта */
+.contacts-map {
+    display: flex;
+    align-items: stretch;
+}
+
+.contacts-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+}
+
+/* --- 2. Социальные сети --- */
+.social-section {
+    padding: 30px 0 80px;
+}
+
+.social-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 25px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-white);
+    transition: all 0.4s ease;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    gap: 8px;
+}
+
+.social-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    border-color: var(--primary);
+    box-shadow: 0 0 50px rgba(85, 19, 176, 0.3);
+}
+
+.social-icon {
+    font-size: 48px;
+    display: block;
+}
+
+.social-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: var(--text-white);
+    margin: 0;
+}
+
+.social-card p {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* --- 3. Адаптивность --- */
+@media (max-width: 992px) {
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contacts-map iframe {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-details {
+        padding: 25px 20px;
+    }
+    
+    .contacts-details h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-value {
+        font-size: 0.95rem;
+    }
+    
+    .contact-icon {
+        font-size: 24px;
+        min-width: 32px;
+    }
+    
+    .social-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
+    
+    .social-card {
+        padding: 25px 20px;
+    }
+    
+    .social-icon {
+        font-size: 36px;
+    }
+    
+    .social-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contacts-map iframe {
+        min-height: 250px;
+    }
+    
+    .contact-item {
+        padding: 10px 0;
+        gap: 14px;
+    }
+    
+    .contact-icon {
+        font-size: 20px;
+        min-width: 28px;
+    }
+    
+    .contact-label {
+        font-size: 10px;
+    }
+    
+    .contact-value {
+        font-size: 0.85rem;
+    }
+}

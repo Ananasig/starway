@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWay — Планеты</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- 1. ШАПКА (HEADER)                          -->
+    <!-- ========================================== -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">✦</span>
+                        <span class="logo-text">StarWay</span>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="planets.html" class="active">Планеты</a></li>
+                        <li><a href="tours.html">Туры</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <a href="tours.html" class="btn-book">Забронировать</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. ЗАГОЛОВОК СТРАНИЦЫ                     -->
+    <!-- ========================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Выбери свою <span>планету</span></h1>
+            <p>Каждая планета — это новый мир, новые впечатления и новые горизонты</p>
+        </div>
+    </section>
+
+    <!-- ===== РАЗДЕЛИТЕЛЬ ===== -->
+    <div class="divider">
+        <span>✦</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. ГАЛЕРЕЯ ПЛАНЕТ                         -->
+    <!-- ========================================== -->
+    <section class="planets-gallery">
+        <div class="container">
+            
+            <!-- РЯД 1: Меркурий + Венера -->
+            <div class="planets-row">
+                <!-- Меркурий -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/mercury.jpg -->
+                        <img src="images/mercury.png" alt="Меркурий" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Меркурий'">
+                        <div class="planet-badge">Земная группа</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>☿ Меркурий</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-180°C ... +430°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">77 млн км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~3 месяца</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Венера -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/venus.jpg -->
+                        <img src="images/venus.png" alt="Венера" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Венера'">
+                        <div class="planet-badge">Земная группа</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>♀ Венера</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">+462°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">38 млн км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~2 месяца</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- РЯД 2: Земля + Марс -->
+            <div class="planets-row">
+                <!-- Земля -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/earth.jpg -->
+                        <img src="images/earth.png" alt="Земля" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Земля'">
+                        <div class="planet-badge">Земная группа</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>🌍 Земля</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">+15°C (средняя)</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">0 км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">Домашний тур</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Марс -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/mars.jpg -->
+                        <img src="images/mars.png" alt="Марс" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Марс'">
+                        <div class="planet-badge">Земная группа</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>♂ Марс</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-60°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">225 млн км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~6 месяцев</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- РЯД 3: Юпитер + Сатурн -->
+            <div class="planets-row">
+                <!-- Юпитер -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/jupiter.jpg -->
+                        <img src="images/jupiter.png" alt="Юпитер" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Юпитер'">
+                        <div class="planet-badge">Газовый гигант</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>♃ Юпитер</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-110°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">588 млн км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~1.5 года</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Сатурн -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/saturn.jpg -->
+                        <img src="images/saturn.png" alt="Сатурн" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Сатурн'">
+                        <div class="planet-badge">Газовый гигант</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>♄ Сатурн</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-140°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">1.2 млрд км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~2 года</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+
+                        <!-- РЯД 4: Уран + Нептун -->
+            <div class="planets-row">
+                <!-- Уран -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/uranus.png -->
+                        <img src="images/uranus.png" alt="Уран" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Уран'">
+                        <div class="planet-badge">Ледяной гигант</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>⛢ Уран</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-195°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">2.6 млрд км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~5 лет</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+
+                <!-- Нептун (теперь справа от Урана) -->
+                <div class="planet-card glass-card">
+                    <div class="planet-image">
+                        <!-- СЮДА ВСТАВИШЬ ФОТО: images/neptune.png -->
+                        <img src="images/neptune.png" alt="Нептун" onerror="this.src='https://via.placeholder.com/600x400/5513b0/ffffff?text=Нептун'">
+                        <div class="planet-badge">Ледяной гигант</div>
+                    </div>
+                    <div class="planet-info">
+                        <h3>♆ Нептун</h3>
+                        <div class="planet-stats">
+                            <div class="stat">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-text">-200°C</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">📍</span>
+                                <span class="stat-text">4.3 млрд км</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-icon">🚀</span>
+                                <span class="stat-text">~7 лет</span>
+                            </div>
+                        </div>
+                        <a href="tours.html" class="btn-book-planet">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- ========================================== -->
+    <!-- ПОДВАЛ (FOOTER)                            -->
+    <!-- ========================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">StarWay</span>
+                    <p>&copy; 2026. Все права защищены</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html">Главная</a>
+                    <a href="planets.html">Планеты</a>
+                    <a href="tours.html">Туры</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://vk.com/vladptashinsky" target="_blank" title="ВКонтакте">VK</a>
+                    <a href="https://t.me/vladyyyyk" target="_blank" title="Telegram">TG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarWay — Туры</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- 1. ШАПКА (HEADER)                          -->
+    <!-- ========================================== -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">✦</span>
+                        <span class="logo-text">StarWay</span>
+                    </a>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="planets.html">Планеты</a></li>
+                        <li><a href="tours.html" class="active">Туры</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </nav>
+                <a href="tours.html" class="btn-book">Забронировать</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- 2. ЗАГОЛОВОК СТРАНИЦЫ                     -->
+    <!-- ========================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Выбери свой <span>тур</span></h1>
+            <p>Открой для себя новые миры с комфортом и безопасностью</p>
+        </div>
+    </section>
+
+    <!-- ===== РАЗДЕЛИТЕЛЬ ===== -->
+    <div class="divider">
+        <span>✦</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 3. КАРТОЧКИ ТУРОВ                         -->
+    <!-- ========================================== -->
+    <section class="tours-list">
+        <div class="container">
+            <div class="tours-grid">
+                
+                <!-- ТУР 1: Базовый -->
+                <div class="tour-card glass-card">
+                    <div class="tour-icon">🛸</div>
+                    <h3>Базовый</h3>
+                    <div class="tour-details">
+                        <div class="tour-detail">
+                            <span class="detail-label">Планета:</span>
+                            <span class="detail-value">Земная орбита</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Длительность:</span>
+                            <span class="detail-value">3 дня</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value tour-price">500 000 ₽</span>
+                        </div>
+                    </div>
+                    <p class="tour-description">Обзорный полет вокруг Земли с фотосессией на орбите</p>
+                    <a href="#booking-form" class="btn-select-tour">Выбрать тур</a>
+                </div>
+
+                <!-- ТУР 2: Стандартный -->
+                <div class="tour-card glass-card">
+                    <div class="tour-icon">🚀</div>
+                    <h3>Стандартный</h3>
+                    <div class="tour-details">
+                        <div class="tour-detail">
+                            <span class="detail-label">Планета:</span>
+                            <span class="detail-value">Марс</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Длительность:</span>
+                            <span class="detail-value">6 месяцев</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value tour-price">2 500 000 ₽</span>
+                        </div>
+                    </div>
+                    <p class="tour-description">Высадка на поверхность Красной планеты с экскурсией</p>
+                    <a href="#booking-form" class="btn-select-tour">Выбрать тур</a>
+                </div>
+
+                <!-- ТУР 3: Премиум -->
+                <div class="tour-card glass-card">
+                    <div class="tour-icon">🌟</div>
+                    <h3>Премиум</h3>
+                    <div class="tour-details">
+                        <div class="tour-detail">
+                            <span class="detail-label">Планета:</span>
+                            <span class="detail-value">Юпитер + Сатурн</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Длительность:</span>
+                            <span class="detail-value">2 года</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value tour-price">8 000 000 ₽</span>
+                        </div>
+                    </div>
+                    <p class="tour-description">Посещение двух газовых гигантов с облетом колец Сатурна</p>
+                    <a href="#booking-form" class="btn-select-tour">Выбрать тур</a>
+                </div>
+
+                <!-- ТУР 4: Экстрим -->
+                <div class="tour-card glass-card">
+                    <div class="tour-icon">⚡</div>
+                    <h3>Экстрим</h3>
+                    <div class="tour-details">
+                        <div class="tour-detail">
+                            <span class="detail-label">Планета:</span>
+                            <span class="detail-value">Уран + Нептун</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Длительность:</span>
+                            <span class="detail-value">7 лет</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value tour-price">25 000 000 ₽</span>
+                        </div>
+                    </div>
+                    <p class="tour-description">Для настоящих исследователей — ледяные гиганты Солнечной системы</p>
+                    <a href="#booking-form" class="btn-select-tour">Выбрать тур</a>
+                </div>
+
+            </div>
+
+            <!-- ===== РЯД 5: Индивидуальный тур (по центру) ===== -->
+            <div class="tours-row-special">
+                <div class="tour-card glass-card special-tour">
+                    <div class="tour-icon">✨</div>
+                    <h3>Индивидуальный</h3>
+                    <div class="tour-details">
+                        <div class="tour-detail">
+                            <span class="detail-label">Планета:</span>
+                            <span class="detail-value">Любая на выбор</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Длительность:</span>
+                            <span class="detail-value">Индивидуально</span>
+                        </div>
+                        <div class="tour-detail">
+                            <span class="detail-label">Цена:</span>
+                            <span class="detail-value tour-price">Договорная</span>
+                        </div>
+                    </div>
+                    <p class="tour-description">Создай свой уникальный маршрут к любой планете Солнечной системы</p>
+                    <a href="#booking-form" class="btn-select-tour">Выбрать тур</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== РАЗДЕЛИТЕЛЬ ===== -->
+    <div class="divider">
+        <span>✦</span>
+    </div>
+
+        <!-- ========================================== -->
+    <!-- 4. ФОРМА БРОНИРОВАНИЯ                     -->
+    <!-- ========================================== -->
+    <section class="booking-form" id="booking-form">
+        <div class="container">
+            <h2>Оставь <span>заявку</span></h2>
+            <p class="form-subtitle">Заполни форму, и мы свяжемся с тобой в ближайшее время</p>
+            
+            <div class="form-container glass-card">
+                <form action="#" method="POST">
+                    <!-- Поле: ФИО -->
+                    <div class="form-group">
+                        <label for="name">ФИО *</label>
+                        <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
+                    </div>
+
+                    <!-- Поле: Email -->
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                    </div>
+
+                    <!-- Поле: Телефон -->
+                    <div class="form-group">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+
+                    <!-- Поле: Выбор тура (выпадающий список) -->
+                    <div class="form-group">
+                        <label for="tour">Выбери тур *</label>
+                        <select id="tour" name="tour" required>
+                            <option value="">— Выбери тур —</option>
+                            <option value="basic">Базовый (Земная орбита)</option>
+                            <option value="standard">Стандартный (Марс)</option>
+                            <option value="premium">Премиум (Юпитер + Сатурн)</option>
+                            <option value="extreme">Экстрим (Уран + Нептун)</option>
+                            <option value="individual">✨ Индивидуальный (Любая планета)</option>
+                        </select>
+                    </div>
+
+                    <!-- Поле: Выбор планеты (для индивидуального тура) -->
+                    <div class="form-group planet-select-group">
+                        <label for="planet">Выбери планету <span class="planet-hint">(для индивидуального тура)</span></label>
+                        <select id="planet" name="planet">
+                            <option value="">— Выбери планету —</option>
+                            <option value="mercury">Меркурий</option>
+                            <option value="venus">Венера</option>
+                            <option value="earth">Земля (орбита)</option>
+                            <option value="mars">Марс</option>
+                            <option value="jupiter">Юпитер</option>
+                            <option value="saturn">Сатурн</option>
+                            <option value="uranus">Уран</option>
+                            <option value="neptune">Нептун</option>
+                        </select>
+                    </div>
+
+                    <!-- Поле: Дата полета -->
+                    <div class="form-group">
+                        <label for="date">Дата полета *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <!-- Поле: Количество мест -->
+                    <div class="form-group">
+                        <label for="seats">Количество мест *</label>
+                        <input type="number" id="seats" name="seats" min="1" max="10" value="1" required>
+                    </div>
+
+                    <!-- Поле: Комментарий -->
+                    <div class="form-group">
+                        <label for="comment">Комментарий</label>
+                        <textarea id="comment" name="comment" rows="4" placeholder="Дополнительные пожелания или вопросы..."></textarea>
+                    </div>
+
+                    <!-- Кнопка отправки -->
+                    <button type="submit" class="btn-submit">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== РАЗДЕЛИТЕЛЬ ===== -->
+    <div class="divider">
+        <span>✦</span>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 5. НАШИ ГАРАНТИИ                          -->
+    <!-- ========================================== -->
+    <section class="guarantees">
+        <div class="container">
+            <h2>Наши <span>гарантии</span></h2>
+            <div class="guarantees-grid">
+                
+                <div class="guarantee-item glass-card">
+                    <div class="guarantee-icon">💯</div>
+                    <h3>100% возврат</h3>
+                    <p>Полный возврат средств при отмене тура за 30 дней до старта</p>
+                </div>
+
+                <div class="guarantee-item glass-card">
+                    <div class="guarantee-icon">🛡️</div>
+                    <h3>Страховка</h3>
+                    <p>Каждый турист застрахован на весь период полета</p>
+                </div>
+
+                <div class="guarantee-item glass-card">
+                    <div class="guarantee-icon">📞</div>
+                    <h3>Поддержка 24/7</h3>
+                    <p>Служба поддержки на связи в любой точке галактики</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+       <!-- ========================================== -->
+    <!-- ПОДВАЛ (FOOTER)                            -->
+    <!-- ========================================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">StarWay</span>
+                    <p>&copy; 2026. Все права защищены</p>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html">Главная</a>
+                    <a href="planets.html">Планеты</a>
+                    <a href="tours.html">Туры</a>
+                    <a href="about.html">О нас</a>
+                    <a href="contacts.html">Контакты</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://vk.com/vladptashinsky" target="_blank" title="ВКонтакте">VK</a>
+                    <a href="https://t.me/vladyyyyk" target="_blank" title="Telegram">TG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
